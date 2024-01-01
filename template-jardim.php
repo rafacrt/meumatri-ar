@@ -82,8 +82,7 @@ $current_user = wp_get_current_user();
         </p>
       </div>
     </div>
-    <button id="button-floating-jardim" class="button-floating-jardim" onclick="escolherTemplate()">Escolher template
-      2</button>
+    <button id="button-floating-jardim" class="button-floating-jardim" onclick="escolherTemplate()">Escolher Template</button>
   </div>
 
   <script>
@@ -98,29 +97,9 @@ $current_user = wp_get_current_user();
    localStorage.setItem('nomeCasal', nomeCasal);
    localStorage.setItem('chosenTemplate', 'template2');
 
-   // Cria uma nova solicitação AJAX
-   var xhr = new XMLHttpRequest();
-   xhr.open('POST', 'https://meumatri.com/wp-admin/admin-ajax.php', true);
-   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-   // Adiciona um manipulador de eventos onload à solicitação AJAX
-   xhr.onload = function() {
-       if (this.status == 200) {
-           // A solicitação foi bem-sucedida, exibe a resposta
-           alert(this.responseText);
-       } else {
-           // Algo deu errado, exibe uma mensagem de erro
-           alert('Erro ao criar a página');
-       }
-   };
-
-   // Envia a solicitação ao servidor com os dados do armazenamento local
-   xhr.send('action=create_page&nomeCasal=' + nomeCasal + '&date=' + date + '&chosenTemplate=template2'); // Adicione '&date=' + date + ' a esta linha
-
    // Redirecionamento para outra página
    window.location.href = 'https://meumatri.com/cadastro/';
 }
-
   </script>
 
   <?php get_footer(); ?>
