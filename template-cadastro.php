@@ -40,7 +40,7 @@ get_header();
         line-height: 24px;
         letter-spacing: 0em;
         text-align: center;
-        color: #101828;
+        color: #101828; 
     }
 
     .login>.form-group>form>input:not([type='submit']) {
@@ -55,7 +55,7 @@ get_header();
         border: 1px solid #D0D5DD;
         box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
         border-radius: 8px;
-
+        
     }
 
     .login>.form-group>form>input[type='submit'] {
@@ -68,7 +68,7 @@ get_header();
         letter-spacing: 0em;
         text-align: center;
         background-color: #283F3B;
-        cursor: pointer;
+        cursor:pointer;
 
     }
 
@@ -88,11 +88,10 @@ get_header();
         line-height: 20px;
         letter-spacing: 0em;
         text-align: center;
-        color: #475467;
+        color:#475467;
 
     }
-
-    .login-text-small {
+    .login-text-small{
         font-family: Inter;
         font-size: 14px;
         font-weight: 400;
@@ -102,26 +101,25 @@ get_header();
 
     }
 
-    .btn {
+    .btn{
         color: white !important;
     }
-
     .button-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .error-message {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color:#F06543;
+    padding:10px 10px 10px 10px;
     }
 
-    .error-message {
-        font-family: Inter;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: center;
-        color: #F06543;
-        padding: 10px 10px 10px 10px;
-    }
 </style>
 
 <section class="home login">
@@ -129,27 +127,20 @@ get_header();
     <p class="section-sub-title">Crie sua conta gratuitamente e tenha acesso ao seu site editado!</p>
     <div class="form-group">
         <form name="loginform" id="registration-form" method="post">
-            <input type="text" name="couple_name" id="couple_name" class="input" value="" size="20"
-                placeholder="Nome do casal" />
-            <input type="hidden" name="cpf" id="cpf" class="input" value="26224451990" maxlength="11"
-                placeholder="CPF do recebedor" />
-            <input type="email" name="user_login" id="user_login" class="input" value="" size="20"
-                placeholder="E-mail" />
-            <input type="password" name="user_pass" id="user_pass" class="input" value="" size="20"
-                placeholder="Criar Senha" />
-            <input type="password" name="user_pass_confirm" id="user_pass_confirm" class="input" value="" size="20"
-                placeholder="Confirmar a senha" />
+            <input type="text" name="couple_name" id="couple_name" class="input" value="" size="20" placeholder="Nome do casal" />
+            <input type="hidden" name="cpf" id="cpf" class="input" value="26224451990" maxlength="11" placeholder="CPF do recebedor" />
+            <input type="email" name="user_login" id="user_login" class="input" value="" size="20" placeholder="E-mail" />
+            <input type="password" name="user_pass" id="user_pass" class="input" value="" size="20" placeholder="Criar Senha" />
+            <input type="password" name="user_pass_confirm" id="user_pass_confirm" class="input" value="" size="20" placeholder="Confirmar a senha" />
             <div id="password-error" class="error-message"></div>
-            <input type="submit" name="register" class="btn" value="Continuar" />
+            <input type="submit" name="register"  class="btn" value="Continuar" />
             <div id="email-error" class="error-message"></div>
         </form>
     </div>
 
     <p class="divider-text"><span class="divider"></span> Ou <span class="divider"></span></p>
     <div class="login-options">
-        <a
-            href="https://accounts.google.com/o/oauth2/auth?client_id=722833543778-rpqjjnhqoidugejo46pv82jcvs6dcui9.apps.googleusercontent.com&redirect_uri=<?php echo home_url('/login'); ?>&scope=email&response_type=code"><img
-                src="<?= $google ?>" alt="" width="95%"></a>
+        <a href="https://accounts.google.com/o/oauth2/auth?client_id=722833543778-rpqjjnhqoidugejo46pv82jcvs6dcui9.apps.googleusercontent.com&redirect_uri=<?php echo home_url('/login'); ?>&scope=email&response_type=code"><img src="<?= $google ?>" alt="" width="95%"></a>
         <a style="cursor:pointer;" id="facebook-login-button"><img src="<?= $facebook ?>" alt="" width="95%"></a>
         <!-- <a><img src="<?php //$apple ?>" alt="" width="95%"></a> -->
     </div>
@@ -159,50 +150,12 @@ get_header();
 
 </section>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Verifica se há dados armazenados localmente
-        var editedTitle = localStorage.getItem('editedTitle');
-
-        // Preenche o campo "couple_name" se houver dados
-        if (editedTitle) {
-            document.getElementById('couple_name').value = editedTitle;
-        }
-
-        // Limpa os dados armazenados localmente após usá-los, se desejar
-        localStorage.removeItem('editedTitle');
-    });
-
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Verifica se há dados armazenados localmente
-        var nomeCasal = localStorage.getItem('nomeCasal');
-
-        // Preenche o campo "couple_name" se houver dados
-        if (nomeCasal) {
-            document.getElementById('couple_name').value = nomeCasal;
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // Verifica se há dados armazenados localmente
-        var nomeCasal = localStorage.getItem('nomeCasal');
-        var chosenTemplate = localStorage.getItem('chosenTemplate'); // Adicione esta linha para recuperar o template escolhido
-
-        // Preenche o campo "couple_name" se houver dados
-        if (nomeCasal) {
-            document.getElementById('couple_name').value = nomeCasal;
-        }
-
-        // Use 'chosenTemplate' para criar o site com o template escolhido
-    });
-
-    document.getElementById('facebook-login-button').addEventListener('click', function () {
-        var facebookAppId = '280703424706156'; // Substitua pelo seu App ID.
-        var redirectUri = encodeURIComponent('<?php echo home_url('/login?AuthSocial=Facebook'); ?>');
-        var facebookLoginUrl = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=' + facebookAppId + '&redirect_uri=' + redirectUri + '&scope=email';
-        window.location.href = facebookLoginUrl;
-    });
+document.getElementById('facebook-login-button').addEventListener('click', function() {
+    var facebookAppId = '280703424706156'; // Substitua pelo seu App ID.
+    var redirectUri = encodeURIComponent('<?php echo home_url('/login?AuthSocial=Facebook'); ?>');
+    var facebookLoginUrl = 'https://www.facebook.com/v13.0/dialog/oauth?client_id=' + facebookAppId + '&redirect_uri=' + redirectUri + '&scope=email';
+    window.location.href = facebookLoginUrl;
+});
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
@@ -228,15 +181,15 @@ get_header();
             var userPass = jQuery('#user_pass').val();
             var userPassConfirm = jQuery('#user_pass_confirm').val();
             var locaStorageInfoSite = mapLocaStorageInfoSite();
-            var templateBlog = localStorage.getItem('current_template');
+            var templateBlog = localStorage.getItem('current_template'); 
 
             jQuery('.error-message').text('');
 
             jQuery.ajax({
                 type: 'POST',
-                url: '/wp-admin/admin-ajax.php',
+                url: '/wp-admin/admin-ajax.php', 
                 data: {
-                    action: 'validar_usuario',
+                    action: 'validar_usuario',  
                     coupleName: coupleName,
                     cpf: cpf,
                     userLogin: userLogin,
