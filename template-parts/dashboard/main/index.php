@@ -20,41 +20,34 @@ $data = getBalanceRecipient($couple);
 </style>
 
 <section class="hero-dashboar-index" style="margin-top:80px">
-   <div class="container">
-       <p class="section-subtitle">
-           <?php
-           if ($active_blog) {
-               $site_url = get_site_url($active_blog->blog_id);
+    <div class="container">
+        <p class="section-subtitle">
+            <?php
+            if ($active_blog) {
+                $site_url = get_site_url($active_blog->blog_id);
 
-               // Recupere o ID do usuário atualmente logado
-               $user_id = get_current_user_id();
+                // Recupere o ID do usuário atualmente logado
+                $user_id = get_current_user_id();
 
-               // Recupere o metadado 'nome_do_casal' associado ao usuário
-               $nome_do_casal = get_user_meta($user_id, 'nome_do_casal', true);
 
-               if (!empty($nome_do_casal)) {
-                  // Exiba a saída com o valor de 'nome_do_casal'
-                  echo "<h1 class='section-title' style='text-align:left;'>Olá " . esc_html($nome_do_casal) . "</h1>";
-                  echo "Endereço do seu site: <br>";
+                // Recupere o metadado 'couple_name' associado ao usuário
+                $couple_name = get_user_meta($user_id, 'couple_name', true);
 
-                  // Recupere o post com o título 'nome_do_casal'
-                  $post = get_page_by_title($nome_do_casal, OBJECT, 'page');
+                if (!empty($couple_name)) {
+                    // Exiba a saída com o valor de 'couple_name'
+                    echo "<h1 class='section-title' style='text-align:left;'>Olá " . esc_html($couple_name) . "</h1>";
+                    echo "Endereço do seu site: <br>";
+                    echo '<a href="' . esc_url($site_url) . '">' . esc_url($site_url) . '</a>';
+                } else {
+                    echo 'Usuário não está associado a um subsite ou não há nome de casal definido.';
+                }
+            } else {
+                echo 'Usuário não está associado a um subsite.';
+            }
 
-                  // Recupere a URL do post
-                  $post_url = get_permalink($post->ID);
-
-                  // Defina o atributo href do link para a URL do post
-                  echo '<a href="' . esc_url($post_url) . '" id="templateLink">';
-               } else {
-                  echo 'Usuário não está associado a um subsite ou não há nome de casal definido.';
-               }
-           } else {
-               echo 'Usuário não está associado a um subsite.';
-           }
-
-           ?>
-       </p>
-   </div>
+            ?>
+        </p>
+    </div>
 </section>
 <?php if (wp_is_mobile()) : ?>
     <section class="splide">
@@ -139,8 +132,6 @@ $data = getBalanceRecipient($couple);
         </div>
     </div>
 </div>
-
-
 
 <style>
     .modal {
@@ -247,17 +238,11 @@ $data = getBalanceRecipient($couple);
         border-bottom: 1px solid black;
     }
 </style>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var splide = new Splide('.splide');
         splide.mount();
     });
-
-    var chosenTemplate = localStorage.getItem('chosenTemplate'); // Recupera a escolha do template do armazenamento local
-    var templateURL = 'https://meumatri.com/' + chosenTemplate; // Cria a URL do template escolhido
-
-    document.getElementById('templateLink').href = templateURL; // Define o atributo href do link para a URL do template escolhido
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>

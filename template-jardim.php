@@ -10,8 +10,8 @@ if (!is_user_logged_in()) {
 // Carrega o style.css exclusivo do template
 wp_enqueue_style('style-jardim', get_template_directory_uri() . '/assets/css/jardim.css');
 
-$title = 'Monica & Edu';
-$date = '08/02/2024';
+$title = 'Insira aqui o nome do casal';
+$date = 'Data';
 if (wp_is_mobile()) {
   $background = get_template_directory_uri() . '/assets/images/templates-assets/jardimBgMobile.png';
 } else {
@@ -88,18 +88,20 @@ $current_user = wp_get_current_user();
   <script>
     
     function escolherTemplate() {
-   // Captura dos dados
-   var nomeCasal = document.getElementById('nomecasal').innerText;
-   var dateElement = document.getElementById('datecasal'); // Adicione esta linha para obter o elemento de data
-   var date = dateElement ? dateElement.innerText : ''; // Adicione esta linha para verificar se o elemento de data existe antes de tentar acessar sua propriedade innerText
+  // Captura dos dados
+  var nomeCasal = document.getElementById('nomecasal').innerText;
+  var date = document.getElementById('datecasal').innerText;
+  var templateId = 'template-jardim'; // ID estático do template
 
-   // Armazenamento no localStorage
-   localStorage.setItem('nomeCasal', nomeCasal);
-   localStorage.setItem('chosenTemplate', 'template2');
+  // Armazenamento no localStorage
+  localStorage.setItem('nomeCasal', nomeCasal);
+  localStorage.setItem('dataCasal', date); // Armazenando a data
+  localStorage.setItem('chosenTemplate', templateId); // Armazenando o ID do template
 
-   // Redirecionamento para outra página
-   window.location.href = 'https://meumatri.com/cadastro/';
+  // Redirecionamento para outra página
+  window.location.href = 'https://meumatri.com/cadastro/';
 }
+
   </script>
 
   <?php get_footer(); ?>
