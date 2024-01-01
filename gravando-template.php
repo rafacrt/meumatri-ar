@@ -1,81 +1,79 @@
 <?php
 /*
- Template Name: grava dados
+ Template Name: Grava dados
  */
- global $wpdb;
- $current_user = wp_get_current_user();
-//  $teste = $wpdb->get_results("SELECT post_title FROM ".$wpdb->prefix."posts");
-//  $teste = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."posts WHERE post_author =".$current_user->ID." AND post_status = 'publish' ");
 
+global $wpdb;
+$current_user = wp_get_current_user();
 
- // Start the buffering //
-$start =  ob_start();
-var_dump($current_user->ID+869);
-//  foreach ($teste as $page){
-//     echo $page->post_title."<br><hr>";
-//  }
+if (isset($_POST['save'])) {
+    $template_choice = $_POST['template_choice']; // O template escolhido deve ser enviado pelo formulário
+    $nome_casal = $_POST['nome_casal']; // O nome do casal também
+    $data_evento = $_POST['data_evento']; // A data do evento
 
+    // Atualiza o meta do usuário com a escolha do template
+    update_user_meta($current_user->ID, 'chosen_template', $template_choice);
 
+    // Cria uma nova página
+    $new_page = array(
+        'post_type'     => 'page',
+        'post_title'    => 'Página do Casal ' . $nome_casal,
+        'post_content'  => 'Conteúdo personalizado aqui', // Adicione o conteúdo do template aqui
+        'post_status'   => 'publish',
+        'post_author'   => $current_user->ID,
+    );
 
- ?>
-  <div class="editable">
-      <div>
-          <form action="" method="post">
-              <input type="text" name="nome" id="nome" placeholder="Nome" required>
-              <br>
-              <input type="submit" value="salvar" name="save">
-            </form>
-            <!-- <h1>testando sem forms</h1> -->
-        </div>
-        
-        <!-- <div id="save-wrapper">
-            <button id="save-btn">Salvar</button>
-        </div>
-        <div class="teste">
-            <p>apenas um teste</p>
-        </div> -->
-    </div>
+    // Insere a página no banco de dados
+    $post_id = wp_insert_post($new_page);
+
+    // Atualiza meta campos com informações personalizadas
+    update_post_meta($post_id, 'nome_do_casal', $nome_casal);
+    update_post_meta($post_id, 'data_do_evento', $data_evento);
+
+    if ($post_id) {
+        // Redireciona para a nova página ou exibe uma mensagem de sucesso
+        wp_redirect(get_permalink($post_id));
+        exit;
+    } else {
+        echo "Erro ao criar a página.";
+    }
+}
+?>
 
 <script>
-//       document.addEventListener( 'DOMContentLoaded', function() {
+    jQuery(document).ready(function($) {
+    // Recupera os dados do localStorage
+    var nomeCasal = localStorage.getItem('nomeCasal');
+    var dataCasal = localStorage.getItem('dataCasal');
+    var chosenTemplate = localStorage.getItem('chosenTemplate');
 
-//           var editBtn = document.getElementById('edit-btn');
-//           var saveWrapper = document.getElementById('save-wrapper');
-//           var saveBtn = document.getElementById('save-btn');
-
-//           saveBtn.addEventListener('click', function() {
-        
-//             var content = document.querySelector('.editable').innerHTML;
-//             var xhr = new XMLHttpRequest();
-//             xhr.open('POST', window.location.href, true);
-//             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-//             xhr.onload = function() {
-//               saveWrapper.style.display = 'none';
-//             }
-//             xhr.send('edited-content=' + encodeURIComponent(content));
-//           });
-//   } );
+    // Envia os dados para o servidor
+    $.ajax({
+        url: '<?php echo admin_url('admin-ajax.php'); ?>',
+        type: 'POST',
+        data: {
+            action: 'salvar_template',
+            nome_casal: nomeCasal,
+            data_casal: dataCasal,
+            template_escolhido: chosenTemplate
+        },
+        success: function(response) {
+            // Trate a resposta aqui, se necessário
+        }
+    });
+});
 </script>
 
- <?php
- $page =  ob_get_contents();
-//  echo  $teste;
- // Get the content that is in the buffer and put it in your file //
- if(isset($_POST['save'])) {
-    $post_id = $current_user->ID+1989;
-    $content = $page;
-    $data = array(
-        'ID' => $post_id,
-        'post_content' =>  $content,
-        'post_title' => $_POST['nome']
-    );
-    $result = $wpdb->insert($wpdb->prefix.'posts', $data);
-    if($result){
-        file_put_contents('./yourpage'.$post_id.'.html', ob_get_contents());
-        echo "Dados gravados com sucesso!";
-    }
-    else{
-        echo "Erro ao gravar os dados!";
-    }
- }
- ?>
+<!-- HTML para o formulário -->
+<!--
+<form action="" method="post">
+    <input type="text" name="nome_casal" id="nome_casal" placeholder="Nome do Casal" required>
+    <br>
+    <input type="text" name="data_evento" id="data_evento" placeholder="Data do Evento" required>
+    <br>
+    <input type="hidden" name="template_choice" value="nome_do_template">
+    <br>
+    <input type="submit" value="Salvar" name="save">
+</form>
+
+-->
