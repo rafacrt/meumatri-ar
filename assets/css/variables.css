@@ -1,0 +1,55 @@
+:root {
+
+    /* ----- FONTS ------- */
+    --default: 'Poligon', sans-serif;
+    --giftFont: 'Inter';
+    --modernFont: 'Kodchasan';
+    --natureFont: var(--default);
+    --classicFont: var(--default);
+
+    /* ----- COLORS ----- */
+
+    /* Primary Colors */
+    --primary:#283F3B;
+    --secondary:#A2AD84;
+    --white: #FFFFFF;
+    --black: #000000;
+
+    /* Secondary Colors */
+    --black2: #050505;
+    --white2: #D6D6D6;
+    --white3: #D9D9D9;
+    --white4: #F7F7F7;
+    
+    /* Tertiary Colors */
+    --active: #6ef656;
+    
+    /* Home Colors */
+    --homeBg: #FCFCFC;
+    
+    /* Modern Template Colors */
+    --modernBg: #FFFCE9;
+    --modernPrice: #6D2509;
+
+    /* Classic Template Colors */
+    --classicBg: #191E25;
+    --classicBtnClr: #24292F;
+    --classicDesc: #939496;
+
+    /* RGB Colors */
+    --blackRGB: 0, 0, 0;
+    --primaryRGB: 90, 109, 80;
+
+    /* Float Values (for use in rgba colors) */
+    --full: 1;
+    --half: .5;
+    --quarter:.25;
+    --threeQuarter:.75;
+
+    /* ----- SIZES ------ */
+    
+    /* Containers */
+    --desk: 1440px;
+    --inner: 600px;
+
+}

@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+.confirm-presence {
+  padding: 100px 0;
+  background: #D8D9B5;
+}
+
+/* FIXME: Depois utilizar o container global */
+.container {
+  max-width: 1048px;
+  margin-inline: auto;
+  width: calc(100% - 80px);
+}
+
+.confirm-presence__title {
+  font-family: 'Amatic SC', serif;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  color: #1E392E;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.confirm-presence__form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.confirm-presence input:focus {
+  outline: none;
+}
+
+.confirm-presence__form__input-field { 
+  text-align: left;
+  flex-direction: column;
+  width: 100%;
+}
+
+.confirm-presence__form__input-field > span { 
+  margin-bottom: 10px;
+  display: block;
+}
+
+.confirm-presence__form > .confirm-presence__form__input-field > input { 
+  margin: 0px;
+  width: 100%;
+  display: block;
+  border-width: 1px;
+}
+
+.confirm-presence__form > .confirm-presence__form__input-field > input::placeholder { 
+  color: #386636;
+  font-size: 16px;
+  font-family: 'Poligon', sans-serif;
+}
+
+.confirm-presence__form__radio-field{
+  margin-top: 10px;
+}
+
+.confirm-presence__form__radio-field > span { 
+  font-family: 'Poligon', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.confirm-presence__form__radio-field__options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  font-family: 'Poligon', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.confirm-presence__form__radio-field__options__option{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px;
+
+}
+
+.confirm-presence__form__radio-field > .confirm-presence__form__radio-field__options .confirm-presence__form__radio-field__options__option > input {
+  box-shadow: 0px 0px 0px 2px #386636;
+  font-size: 3em;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 4px solid #D8D9B5;
+  background-clip: border-box;
+  border-radius: 50%;
+  appearance: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.confirm-presence__form__radio-field > .confirm-presence__form__radio-field__options .confirm-presence__form__radio-field__options__option >  input:checked {
+  box-shadow: 0px 0px 0px 2px #000000;
+  background-color: #000000;
+}
+
+.confirm-presence__form  .confirm-presence__form__submit {
+  padding: 12px 16px;
+  border-radius: 32px;
+  background-color: #386636;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Poligon', sans-serif;
+  line-height: 1.2;
+  color: #D8D9B5;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.confirm-presence .dropdowns{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Dropdown */
+.confirm-presence .dropdown {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.confirm-presence .dropdown__toggle{
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 12px;
+  border: none;
+  color: black;
+  cursor: pointer;
+  background: inherit;
+  font-size: 16px;
+  display: flex;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+  border: 2px solid black;
+  font-family: 'Poligon', sans-serif;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 4;
+
+  transition: all 0.2s 0.3s;
+}
+
+.confirm-presence .dropdown__toggle__icon{
+  transition: all 0.3s linear;
+}
+
+.confirm-presence .dropdown__toggle[aria-expanded="true"] .dropdown__toggle__icon{
+  transform: rotate(-180deg);  
+}
+
+.confirm-presence .dropdown__menu {
+  list-style: none;
+  border: 2px solid black;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  transition: height 0.35s ease-in-out;
+  overflow: hidden;
+
+  border-radius: 8px;
+
+}
+
+.confirm-presence .dropdown__menu:not(.active){
+  display: none;
+}
+
+.confirm-presence .dropdown__menu__item{
+  background: transparent;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  text-align: left;
+  width: 100%;
+}
+
+.confirm-presence .dropdown__menu__item:hover{
+  background: #F2F2F2;
+  color: black;
+}
+
+@media (min-width: 1024px) {
+  .confirm-presence__form{
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 48px;
+  }
+
+  .confirm-presence .confirm-presence__form__input-field, .confirm-presence .dropdowns, .confirm-presence .confirm-presence__form__radio-field{
+    flex-grow: 1;
+    flex-basis: 400px;
+  }
+
+  .confirm-presence .confirm-presence__form__radio-field{
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .confirm-presence .confirm-presence__form__radio-field .confirm-presence__form__radio-field__options{
+    justify-content: flex-start;
+  }
+
+  .confirm-presence .dropdowns{
+    flex-direction: row;
+    gap: 8px;
+    max-width: calc(50% - 8px);
+  }
+
+  .confirm-presence__form  .confirm-presence__form__submit {
+    width: auto;
+    margin: 0 0 0 auto;
+  }
+}

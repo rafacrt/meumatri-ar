@@ -1,0 +1,92 @@
+/* Estilizando a seção de adição de presentes */
+.presentes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 20px), 1fr)); /* Três colunas por linha */
+    grid-gap: 20px; /* Espaçamento entre colunas */
+}
+
+.categoria-container {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    flex-direction: column; /* Adicione esta linha para quebrar a linha entre as categorias */
+}
+
+.categoria-container h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.presentes-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.categoria-header {
+    background-color: #b4d748;
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.categoria-header-sub {
+    background-color: #b4d748;
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+}
+.categoria-body {
+    padding: 10px;
+    min-height: 100px;
+}
+.categoria-header-verde {
+    background-color: #b4d748;
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Estilizando o contêiner de rolagem */
+.presentes-scroll {
+    overflow-y: scroll; /* Adicionar uma barra de rolagem vertical quando necessário */
+    max-height: 300px; /* Defina a altura máxima para a visualização da lista */
+}
+
+/* Estilizando a lista de presentes */
+/* Estilizando a lista de presentes */
+.presentes-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Dividindo em três colunas */
+    grid-gap: 5px; /* Espaçamento entre os itens reduzido para 5px */
+}
+
+.presentes-list li {
+    margin-bottom: 10px;
+}
+/* Estilizando o botão "Atualizar" do WordPress */
+#publish.button-primary {
+    background-color: #b4d748; /* Cor verde desejada */
+    border-color: #b4d748; /* Cor da borda */
+    color: #333; /* Cor do texto */
+}
+
+.valor-total-presentes{
+    margin-top:20px;
+}
+
+.valor-total-categoria{
+    font-weight: bold;
+    margin-top:30px;
+}

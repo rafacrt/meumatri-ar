@@ -1,0 +1,245 @@
+section {
+  padding: initial;
+}
+
+.tips {
+  background-color: #1e392e;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  text-align: center;
+  position: relative;
+}
+
+.tips__title {
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+  color: white !important;
+}
+
+.tips__subtitle {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: 20px;
+  color: white;
+}
+
+.tips__buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 50px;
+  overflow: auto;
+  padding-left: 24px;
+  margin-bottom: 40px;
+}
+
+.tips__buttons::-webkit-scrollbar {
+  display: none;
+}
+
+.tips__buttons .tips__buttons__btn {
+  padding: 8px 12px;
+  background: transparent;
+  border-radius: 8px;
+  border: 1px solid white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: white;
+  text-wrap: nowrap;
+}
+
+.tips__buttons .tips__buttons__btn:hover {
+  background-color: white;
+  color: #3a00e5;
+}
+
+.tips__card {
+  background-color: white;
+  width: 300px;
+  padding: 20px 30px;
+  text-align: left;
+  border-radius: 24px;
+  margin: 0 10px;
+}
+
+.tips__card__type {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tips__card__type__text {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+}
+
+.tips__card__description {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  margin-top: 30px;
+}
+
+.tips__card__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.tips__card__info__value {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.tips__card__info__show {
+  background-color: #386636;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.tips__card__info__show:hover {
+  background-color: rgb(23, 42, 34);
+}
+
+.tips__modal {
+  visibility: hidden;
+  transition: 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  width: 100vw;
+  height: 100%;
+  background-color: #00000096;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tips__modal.active {
+  visibility: visible;
+  transition: 0.5s;
+}
+
+.tips__modal__content {
+  padding: 20px 30px;
+  width: 300px;
+  background-color: white;
+  text-align: left;
+  border-radius: 24px;
+}
+
+.tips__modal__close {
+  text-align: right;
+  cursor: pointer;
+}
+
+.tips__modal__close:hover svg path {
+  fill: #3a00e5;
+}
+
+.tips__modal .tips__card__description {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.tips__modal__text {
+  font-size: 16px;
+  color: #6b6b6b;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 22px 0;
+}
+
+.tips__modal__button {
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: #fff;
+  background-color: #3a00e5;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tips__modal__button:hover {
+  background-color: #3400d0;
+}
+
+.splide__arrows.splide__arrows--ltr {
+  display: none;
+}
+
+.splide__pagination {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .tips__title {
+    font-size: 80px;
+    line-height: 120px;
+  }
+
+  .tips__subtitle {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .tips__buttons {
+    justify-content: center;
+  }
+
+  .tips__modal__content {
+    width: 520px;
+  }
+
+  .tips__modal__button {
+    width: 250px;
+  }
+
+  .tips .splide__arrow {
+    background: transparent;
+    border: 1px solid #fff;
+  }
+
+  .tips .splide__arrow--next {
+    left: 40px;
+    right: 0;
+  }
+  .tips .splide__arrow--prev {
+    left: 0;
+    right: 40px;
+  }
+
+  .splide__arrows.splide__arrows--ltr {
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    left: 50%;
+    right: 50%;
+    top: 250px;
+  }
+}
+
+/* Splide */
+
+.splide {
+  padding: 0;
+}

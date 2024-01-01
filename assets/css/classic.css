@@ -1,0 +1,210 @@
+@import url('common.css');
+main {
+  background-color: var(--classicBg);
+}
+
+.classic {
+  color: var(--white3);
+  background-color: var(--classicBg);
+}
+
+.middle-icon {
+  margin: 0 auto;
+  display: block;
+  height: 2px;
+}
+
+.section-title {
+  color: var(--white3);
+}
+
+.btn {
+  color: var(--classicBg);
+  background: var(--white2);
+  border-style: none;
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  display: block;
+}
+
+/* hero */
+.hero.classic {
+  min-height: 500px;
+}
+#uploadBackground {
+  height: 500px;
+  width: 100vw;
+}
+.content {
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  min-height: initial;
+}
+
+.content h1,
+.content p {
+  color: var(--white4);
+  background: radial-gradient(
+    266.13% 266.13% at 50.13% 34.68%,
+    var(--white4) 0%,
+    rgba(var(--blackRGB), 0) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* description */
+p.text {
+  color: var(--classicDesc);
+}
+
+img.couple {
+  width: 95%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* The Couple */
+img.splide_image_carousel {
+  width: 100%;
+  max-width: 1440px;
+  margin: 3rem 0;
+}
+
+button.splide__arrow {
+  margin-top: 0;
+}
+
+/* Ceremony */
+.ceremony-image {
+  width: 95%;
+  padding-inline: 16px;
+}
+
+.maps {
+  text-align: center;
+  margin: 48px 0 64px;
+}
+
+/* Gift List */
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.filter > p {
+  color: var(--white3);
+}
+
+#filter {
+  width: 105px;
+  height: 29px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  border-style: none;
+  background: var(--white);
+  box-shadow: inset 0px 2px 7px rgba(var(--blackRGB), 0.15);
+}
+
+.form-filter {
+  margin: auto 0;
+}
+
+.gift-list__item{
+  width: 100%;
+  text-align: left;
+  padding-top:10px;
+}
+
+.gift-list__desc{
+width: 100%;
+}
+
+/* .gift-list__container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  
+}
+.gift-list__image {
+  display: block;
+  align-self: center;
+  width: 72px;
+  height: 72px;
+  border: none;
+}
+
+.gift-list__image > img {
+  width: 72px;
+  height: 72px;
+  border: none;
+}
+
+.gift-list__desc > .text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: left;
+  letter-spacing: 0.01em;
+  margin-top: 0;
+}
+
+.gift-list__desc > .price {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: left;
+  letter-spacing: -0.04em;
+  color: var(--white2);
+  margin-left: 10px;
+}
+
+.gift-list__button {
+  display: block;
+  align-self: center;
+}
+
+.gift-list__button > button {
+  width: 105px;
+  height: 36px;
+}
+
+.gift-list__see-more > button {
+  width: 212px;
+  height: 60px;
+  margin: 24px auto;
+} */
+
+/* Tips */
+.tips__buttons--items > button {
+  width: 150px;
+  height: 60px;
+}
+
+/* RSVP Forms */
+.rsvp__forms {
+  box-shadow: 2px 2px 4px var(--white2) 2e;
+}
+input:not([type='checkbox']):not([type='submit']) {
+  border: 0.5px solid var(--white3);
+}
+
+input::placeholder {
+  color: var(--white3);
+}

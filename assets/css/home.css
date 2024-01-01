@@ -1,0 +1,1106 @@
+html, body{max-width:100%; overflow-x: hidden !important;}
+@font-face {
+    font-family: 'TomatoGrotesk-Black';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-Black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-BlackSlanted';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-BlackSlanted.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-Bold';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-BoldSlanted';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-BoldSlanted.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-ExtraBold';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-ExtraBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-ExtraBoldSlanted';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-ExtraBoldSlanted.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-ExtraLight';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-ExtraLight.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-ExtraLightSlanted';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-ExtraLightSlanted.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-Light';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-LightSlanted';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-LightSlanted.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-Medium';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-MediumSlanted';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-MediumSlanted.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-SemiBold';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-SemiBoldSlanted';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-SemiBoldSlanted.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-Slanted';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-Slanted.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-Thin';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'TomatoGrotesk-ThinSlanted';
+    src: url('https://meumatri.com/wp-content/themes/meumatri/assets/fonts/TomatoGrotesk-ThinSlanted.otf') format('opentype');
+}
+
+/* Exemplo de uso de fonte */
+body {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+}
+
+
+/* Estilo para o banner herói */
+.hero-banner {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-image: url('../../../../uploads/2023/09/ThaiseRenan_Cerimonia-308-1.png');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+}
+
+.hero-banner-template {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+}
+
+/* Estilos para dispositivos móveis (largura de tela abaixo de 768px, por exemplo) */
+@media (max-width: 768px) {
+    .hero-banner {
+        font-family: 'TomatoGrotesk-Regular', sans-serif;
+        background-image: url('../../../../uploads/2023/09/ThaiseRenan_Cerimonia-308-1.png');
+        background-size: cover;
+        background-position: center center;
+        /* height: 600px; */
+        border-bottom-left-radius: 2%;
+        border-bottom-right-radius: 2%;
+        font-family: 'TomatoGrotesk-Regular', sans-serif;
+    }
+    /* Estilo para o overlay */
+    .overlay {
+        font-family: 'TomatoGrotesk-Regular', sans-serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* height: 600px !important; */
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        border-bottom-left-radius: 2%;
+        border-bottom-right-radius: 2%;
+    }
+    .hero-banner-template {
+        font-family: 'TomatoGrotesk-Regular', sans-serif;
+        /* height: 80vh !important; */
+        border-bottom-left-radius: 2%;
+        border-bottom-right-radius: 2%;
+        font-family: 'TomatoGrotesk-Regular', sans-serif;
+    }
+    .overlay-template {
+        font-family: 'TomatoGrotesk-Regular', sans-serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 750px !important;
+        background: linear-gradient(to right, #1b2927, #6c8631);
+        border-bottom-left-radius: 2%;
+        border-bottom-right-radius: 2%;
+    } 
+}
+
+/* Estilo para o overlay */
+.overlay {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+}
+
+.overlay-template {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100vh; */
+    height: 612px;
+    background: linear-gradient(to right, #1b2927, #6c8631);
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+}
+
+/* Estilo para o menu transparente */
+.transparent-menu {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: transparent !important;
+    position: absolute !important;
+    width: 100% !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    margin-top: 24px !important;
+    box-shadow: none !important;
+}
+
+.bottom-text {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    position: absolute;
+    bottom: 20px;
+    left: 8%;
+    right: 0;
+    padding: 20px;
+    color: #fff;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.align-text-hero {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    position: absolute !important;
+    bottom: 0 !important;
+    padding-bottom: 50px !important;
+}
+
+/* .align-text-hero-template {
+    position: absolute !important;
+    bottom: 0 !important;
+    padding-bottom: 50px !important;
+} */
+
+.align-text-hero-template-mobile {
+    margin-top: 180px;
+}
+
+/* .align-text-hero-template-img {
+    position: absolute !important;
+    bottom: 0 !important;
+    right:0 !important;
+    padding-bottom: 50px !important;
+}
+
+.align-text-hero-template-img-mobile {
+} */
+
+.escolha-template-align {
+    position: absolute;
+    bottom: 60px;
+}
+
+@media screen and (max-width:768px){
+    .escolha-template-align {
+        position: absolute;
+        bottom: 50px;
+    } .align-text-hero-template {
+        margin: 32px;
+    } .align-text-hero-template-img-mobile {
+        padding-bottom: 80px !important;
+    }
+}
+.text-hero {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    color: #FFF;
+    font-size: 2.625rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 36px;
+}
+
+#templatesSectionDois {
+    padding: 18% 15px 8% 15px;
+}
+
+.text-hero-template {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    color: #FFF;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 36px;
+    max-width: 468px;
+}
+.text-hero-template-mobile {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: -200px !important;
+    max-width: 90%;
+}
+
+/* Estilo para centralizar o menu e alterar a cor da fonte */
+.nav-link {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    color: #fff !important;
+}
+
+.nav-button-login {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    border-radius: 32px;
+    border: 1px solid var(--primary-white, #FFF);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--primary-white, #FFF);
+    width: 100px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.nav-button-home {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    border-radius: 32px !important;
+    background: #A1C337 !important;
+    border: none !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    width: 161px !important;
+    text-align: center !important;
+    text-align: center !important;
+}
+.nav-button-home-template {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    border-radius: 32px !important;
+    background: #A1C337 !important;
+    border: none !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    width: 200px !important;
+    text-align: center !important;
+    text-align: center !important;
+}
+.btn-home-black{
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    color: #000 !important;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0em;
+}
+.titulo_section1 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    color: #282828;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#sectionDoisSlider{
+    padding: 110px 0;
+}
+.setaSlider {
+    padding-top: 90px;
+}
+.swiper-button-next::after{
+    background-image: url(https://meumatri.com/wp-content/themes/meumatri/assets/images/next.png);
+    background-repeat: no-repeat;
+    font-size: 0px !important;
+    padding: 20px;
+}
+.swiper-button-prev::after{
+    background-image: url(https://meumatri.com/wp-content/themes/meumatri/assets/images/prev.png);
+    background-repeat: no-repeat;
+    font-size: 0px !important;
+    padding: 20px;
+}
+
+.titulo_section {
+    color: #282828;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.titulo_section_mobile {
+    color: #283F3B;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: 0em;
+}
+
+.titulo_section_mobile_1 {
+    color: #282828;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+}
+
+.titulo_section_slider {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.titulo_section_description {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    max-width: 250px;
+    color: #172825;
+}
+
+.card {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    border: none !important;
+    background-color: transparent !important;
+}
+
+/* FAQ */
+.accordion-button:focus {
+    box-shadow: none !important;
+    border-color: #1a1a1a !important;
+}
+
+.accordion-header button{
+    font-family: 'TomatoGrotesk-Regular', sans-serif !important;
+    color: #1a1a1a !important;;
+    font-size: 18px;
+    font-weight: 700;
+}
+button.accordion-button {
+    background-color: #DDE5D8 !important;
+    border-top: 1px solid #878787 !important;
+    padding: 30px 0 !important;
+    
+}
+.accordion-body {
+    background: #DDE5D8 !important;
+    padding: 0 0 40px 0 !important;
+    font-weight: 500 !important;
+}
+.accordion-item {
+    color: #1a1a1a !important;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='19' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E") !important;
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E") !important;
+}  
+/* FIM FAQ */
+
+.carousel-control-prev {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    bottom: 0;
+    left: 0;
+    margin-left: 0;
+}
+
+.carousel-control-next {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    bottom: 0;
+    left: 45px;
+    margin-left: 0;
+}
+
+.bg_section_image_2 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    /* background-color: #A1C337; */
+    /* border-radius: 24px; */
+    /* height: 468px; */
+    margin-top: 16px;
+    /* margin-top: 150px; */
+    margin-bottom: 150px;
+}
+img.bg_section_image_2 {
+    /* margin-bottom: 150px; */
+}
+.bg_section_image_2_mobile {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: #A1C337;
+    border-radius: 24px;
+    height: 518px;
+    margin-top:-30px;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.bg_section_image_2 img {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.titulo_section2 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    margin-top: 150px;
+    padding-left: 64px;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#283F3B;
+}
+.titulo_section2_mobile {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: -60px !important;
+}
+
+.img_section2_mobile{
+    margin-top: -200px !important;
+}
+
+.subtitulo_section2 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    margin-top: 32px;
+    padding-left: 64px;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.subtitulo_section2_mobile {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    margin-top: 60px;
+    padding-left: 44px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000;
+}
+
+.texto_section2 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    margin: 32px 0;
+    padding-left: 64px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.texto_section2_mobile {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    margin-top: 32px;
+    padding-left: 44px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.btn_section2 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    margin-left: 64px !important;
+    color: #000 !important;
+    border-radius: 100px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 10px !important;
+    background-color: #FFF !important;
+    font-family: 'TomatoGrotesk-Regular', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    line-height: 15px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+}
+.align_mobile {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    margin-left: 40px !important;
+    margin-bottom: 60px !important;
+}
+.card_section2 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    padding: 32px;
+    background-color: #FFF;
+    border-radius: 24px;
+
+}
+
+.bg_section_image_3 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: #85b785;
+    border-radius: 24px;
+    height: 415px;
+    padding: auto;
+    margin-top: -4px;
+}
+
+.text_section2 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.bg_section_image_3 img {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    width: 100%;
+    border-radius: 24px;
+}
+
+/* Section 3 MOBILE */
+@media screen and (max-width:768px){
+    .bg_section_image_3 img {
+    margin-top:-80px
+    }.bg_section_image_3 {
+        background-color: transparent;
+    }.overlay_bg_section_image_3 {
+        height: 160px;
+    }
+}
+
+/* Section 3 MOBILE */
+hr.divisor{
+    border-top: 1px solid #000;
+}
+
+.titulo_section_image2 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    padding-left: 64px;
+}
+
+.overlay_bg_section_image_3 p {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    padding-left: 44px;
+}
+
+.overlay_bg_section_image_3 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    /* Altura do overlay */
+    background-color: #112320;
+    /* Cor de fundo do overlay (preto com 70% de opacidade) */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.overlay_bg_section_image_3 p {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    color: white;
+    /* Cor do texto no overlay */
+    margin: 0;
+}
+
+.text_section_4 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.bg_section4 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: #B4D748;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.titulo_section4 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+ol.style_1 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    counter-reset: li;
+    padding-left: 2.5rem;
+    padding: .25rem 0 .25rem 2.75rem;
+}
+
+ol.style_1 p {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+ol.style_1 ol,
+ol.style_1 ul {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    padding: .75rem 0 0 1.5rem;
+}
+
+ol.style_1 li {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    margin-bottom: .375rem;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+ol.style_1>li {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    position: relative;
+    counter-increment: li;
+    min-height: 2rem;
+    padding-top: .5rem;
+    list-style: none;
+}
+
+ol.style_1>li::before,
+ol.style_1>li::after {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    position: absolute;
+    display: flex;
+    background-color: #283F3B;
+    color: #FFF;
+}
+
+ol.style_1>li::before {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    content: counter(li);
+    left: -2.75rem;
+    top: 0;
+    height: calc(2rem - 1px);
+    width: calc(2rem - 1px);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #283F3B;
+}
+
+ol.style_1>li::after {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    content: '';
+    left: -1.75rem;
+    top: calc(2rem + -1px);
+    height: calc(100% - 0.7rem);
+    border-left: 2px solid #283F3B;
+}
+
+ol.style_1>li:last-child::after {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    content: '';
+    border-left: none;
+}
+
+.section5 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.titulo_section5 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 38px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+.subtitulo_section5 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+.card_section5 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: #F3F8E6;
+    border: 1px solid #CDD4BB;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.card_section5 p {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+.btn_section5 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: #1C2A28 !important;
+    color: #FFF !important;
+    border-radius: 100px !important;
+    line-height: 1.8 !important;
+}
+
+.accordion {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background: transparent;
+    border: none;
+}
+
+.card-header {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    padding: 30px 0px 30px 0px !important;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
+
+.accordion .card-header {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background: transparent;
+    border-top: 1px solid #878787;
+    /* border-bottom: 1px solid #878787; */
+    border-bottom: none;
+    cursor: pointer;
+    position: relative;
+    padding-right: 40px;
+}
+
+.accordion .card-header::after {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 26px;
+    font-weight: 200;
+}
+
+.accordion .card-header.collapsed::after {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    content: "-";
+}
+
+.accordion .card-body {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    border-bottom: 1px solid #ddd;
+}
+
+.titulo_section6 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 53px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.section6 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    padding: 150px 0;
+
+    /* margin-top: 150px; */
+    /* margin-bottom: 150px; */
+}
+.bg_section6 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: #DDE5D8;
+}
+
+.bg_section2 {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: #DDE5D8;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+}
+
+.titulo_section2_templates{
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #A1C337;    
+}
+
+.bg_section2_templates {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: #172825;
+    padding-top: 120px;
+    padding-bottom: 20px;
+}
+
+.btn-template-home{
+    background-color: transparent;
+    padding: 16px 24px 16px 24px;
+    border-radius: 100px;
+    border: 1px solid white;
+    color:white;
+    margin-right: 5px;
+    margin-bottom: 15px;
+
+}
+
+.bg_section3_templates {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    background-color: #DDE5D8;
+    /* padding-top: 120px; */
+    /* padding-bottom: 20px; */
+}
+.title_section3_templates{
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #172825;
+}
+.texto_section3_templates {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.btn_section3_templates{
+    padding: 16px 24px 16px 24px;
+    border-radius: 100px;
+    color:#FFF;
+    border: 1px solid #112320;
+    background-color: #112320;
+}
+
+
+.footer {
+    background-color: #112320;
+    padding: 64px 15px !important;
+}
+
+.footer ul {padding-left: 0;}
+
+
+/* .img_cel_mobile{
+    margin-top: -130px;
+    margin-bottom: -80px;
+} */
+
+
+.section3-img-rotate {
+    max-width: 90%;
+    margin: 12px;
+}
+@media screen and (max-width:768px) {
+    #section3 .img_cel_mobile img{
+        max-width: 100%;
+        margin: 40% 0;
+    }
+}
+
+.text-footer {
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.text-footer2{
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.60) !important;
+}
+
+.menu_footer_green{
+    list-style: none;
+    padding:10px;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.menu_footer_green a {
+    color: #A1C337;
+}
+
+.menu_footer{
+    list-style: none;
+    padding:10px;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+
+/* Página Quem Somos */
+.ct1Quemsomos {
+    background-color: #A1C337;
+    padding: 140px 20px;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+
+}
+.ct1Quemsomos h1 {
+    padding-bottom: 32px;
+    color: #333;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.ct1Quemsomos p {
+    color: #333;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}
+.autoresInfo {
+    border-radius: 24px 24px 0px 0px;
+    background: #E7EAEE;
+    padding: 150px 0;
+    font-family: 'TomatoGrotesk-Regular', sans-serif;
+
+}
+.autoresInfo h2 {
+    padding-bottom: 32px; 
+    color: #2B2B2B;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.autoresInfo p {
+    color: #000;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 27px;
+}
+
+
+/* REMOVER depois de criar os templates */
+.menu ul {
+    display: none !important;
+}
+/* REMOVER depois de criar os templates */
+
+.button-floating-jardim {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+  }

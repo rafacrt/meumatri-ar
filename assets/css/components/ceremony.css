@@ -1,0 +1,121 @@
+.ceremony {
+  background: #386636;
+  padding: 100px 0;
+}
+
+.ceremony__intro__type {
+  padding: 12px 20px;
+  background: #fff;
+  border-radius: 16px;
+  width: fit-content;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #201a25;
+}
+
+.ceremony__intro__description {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  color: #fff;
+  margin-bottom: 45px;
+}
+
+.ceremony__image {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 20px 35px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  margin-bottom: 45px;
+}
+
+.ceremony__image img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  max-height: 300px;
+}
+
+.ceremony__image__local {
+  color: #201a25;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+.ceremony__image__address {
+  color: #201a25;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.ceremony__infos__text {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 28px;
+  display: flex;
+  border-bottom: 1px solid #fff;
+  padding: 20px 25px;
+  gap: 20px;
+}
+
+.ceremony__infos__text:last-child {
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ceremony__intro.desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .ceremony__intro.desktop {
+    display: block;
+  }
+
+  .ceremony__intro.mobile {
+    display: none;
+  }
+
+  .container-template {
+    display: flex;
+    gap: 50px;
+  }
+
+  .ceremony__image {
+    min-width: 300px;
+  }
+
+  .ceremony__infos {
+    padding-top: 10px;
+  }
+
+  .ceremony__infos__wrapper {
+    display: flex;
+  }
+
+  .ceremony__infos__text {
+    border-bottom: unset;
+    border-right: 1px solid #fff;
+    padding: 0 20px;
+  }
+
+  .ceremony__infos__text:first-child {
+    padding-left: 0;
+  }
+
+  .ceremony__image {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ceremony__image {
+    min-width: 350px;
+  }
+}

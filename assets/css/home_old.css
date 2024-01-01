@@ -1,0 +1,248 @@
+@import url('common.css');
+/* Common */
+html {
+  font-family: var(--default);
+}
+.home {
+  background: var(--homeBg);
+}
+
+.piroca {
+  color: red;
+}
+
+/* Hero */
+.home.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.home.hero > img#firstHeroSlide {
+  animation: hero_effect 12s forwards;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: -30%;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: bottom left;
+}
+
+.home.hero_buttons {
+  margin: 30vh auto 0;
+  background-color: transparent;
+  position: relative;
+}
+.home.hero_buttons > .btn {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.04em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 332px;
+  height: 54px;
+  margin: 24px auto;
+}
+.home.hero_buttons > .inverse {
+  background-color: var(--homeBg);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+/* Motivations */
+.home.motivations {
+  padding: 35px 5%;
+}
+.home.motivations > h3 {
+  font-size: 37px;
+  font-weight: 600;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.motivations__container {
+  padding-top: 72px;
+}
+.motivations--block {
+  text-align: center;
+}
+.motivations--block > picture {
+  background-color: rgba(90, 109, 80, 0.7);
+  display: block;
+  height: 84px;
+  width: 84px;
+  border-radius: 50%;
+  padding: 20px 0 0;
+  margin: 24px auto;
+}
+.motivations--block > .title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0em;
+  margin: 24px auto;
+}
+.motivations--block > .text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  margin: 24px auto;
+}
+/* Other settings */
+.home > h1.section-title {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.template-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 8px;
+  gap: 16px;
+}
+.template-item {
+  margin: 0 0 80px;
+}
+.template-item > img {
+  max-width: 100%;
+}
+.template-item > a.btn {
+  text-decoration: none;
+  width: 90%;
+  max-width: 334px;
+  margin: 24px auto 0;
+  padding: 14px;
+  font-family: 'Poligon';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -0.04em;
+}
+.template-name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+  color: #000000;
+}
+
+/* FAQ*/
+.home.faq > .title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 8px 0;
+}
+.home.faq > .text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 8px 0;
+}
+details {
+  font-size: 1rem;
+  margin: 16px auto;
+  width: calc(100% -16px);
+  position: relative;
+}
+details > .summary-title {
+  background-color: #ffffff;
+  user-select: none;
+}
+
+details:hover {
+  cursor: pointer;
+}
+
+details > .summary-content {
+  cursor: default;
+  padding: 1em;
+  font-weight: 300;
+  line-height: 1.5;
+  transition: all 5s;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0px 0px 8px 8px;
+}
+
+details > summary {
+  border-radius: 8px;
+  list-style: none;
+  padding: 1em;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  background-color: #d9d9d9;
+}
+details[open] > summary {
+  background-color: #e9e3e3;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+summary:focus {
+  outline: none;
+}
+
+summary:hover .summary-chevron-up svg {
+  opacity: 1;
+}
+
+.summary-chevron-up svg {
+  opacity: 0.5;
+}
+
+.summary-chevron-up,
+.summary-chevron-down {
+  pointer-events: none;
+  position: absolute;
+  top: 0.75em;
+  right: 1em;
+  background-color: #d9d9d9;
+}
+.summary-chevron-down {
+  background-color: #e9e3e3;
+}
+.summary-chevron-up svg,
+.summary-chevron-down svg {
+  display: block;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary ~ * {
+  animation: sweep 0.5s ease-in-out;
+}
+
+/* @keyframes sweep {
+    0%    {opacity: 0; transform: translateX(-10px)}
+    100%  {opacity: 1; transform: translateX(0)}
+  } */
+
+@keyframes hero_effect {
+  0% {
+    translate: 0 0;
+    transform: scale(1);
+    object-position: bottom left;
+  }
+
+  100% {
+    translate: 100px -50px;
+    transform: scale(1.1);
+    object-position: bottom left;
+  }
+}
+

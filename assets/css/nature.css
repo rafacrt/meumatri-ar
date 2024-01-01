@@ -1,0 +1,163 @@
+/* General Settings */
+@import url("common.css");
+section {
+    width: 100%;
+}
+main {
+    background-color: #ECEBE9;
+}
+.nature {
+    background-color: #ECEBE9;
+}
+.middle-icon {
+    margin: 0 auto;
+    display: block;
+}
+.section-title {
+    color: #000000;
+}
+.btn{
+    color: #FFFFFF;
+    background: #283F3B;
+    border-style: none;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.04em; 
+    display: block;
+ 
+}
+/* description */
+p.text {
+    color: #000000;
+}
+
+img.couple {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+.timming-card{
+    color: #FFFFFF;
+    background-color: #283F3B;
+}
+
+/* The Couple */
+img.splide_image_carousel {
+    width: 100%;
+    margin: 3rem 0;
+}
+button.splide__arrow {
+    margin-top: 0;
+}
+
+/* Ceremony */
+.ceremony-image {
+    width: 95%;
+    padding-inline: 16px;
+}
+.maps {
+    text-align: center;
+    margin: 48px 0 64px;
+}
+
+/* Gift List */
+.filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#filter {
+    width: 105px;
+    height: 29px;    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    border-style: none;
+    background: #FFFFFF;
+    box-shadow: inset 0px 2px 7px rgba(0, 0, 0, 0.15);
+}
+.form-filter {
+    margin: auto 0;
+}
+.gift-list__container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.gift-list__image {
+    display: block;
+    align-self: center;    
+    width: 72px;
+    height: 72px;
+    border: none;
+}
+.gift-list__image>img {
+    width: 72px;
+    height: 72px;
+    border: none;
+}
+.gift-list__desc>.text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    margin-top: 0;
+}
+.gift-list__desc>.price {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #6D2509;
+    margin-bottom: 0;
+}
+
+.gift-list__button {
+    display: block;
+    align-self: center;
+}
+
+.gift-list__button>button{
+    width: 105px;
+    height: 36px;
+ 
+}
+
+.gift-list__see-more>button{
+    width: 212px;
+    height: 60px;
+    margin: 24px auto;
+   
+}
+/* Tips */
+.tips__buttons--items>button {
+    width: 150px;
+    height: 60px;
+}
+
+/* RSVP Forms */
+.rsvp__forms{
+    box-shadow: 2px 2px 4px #283F3B;    
+}
+.rsvp__forms>label{
+    color: #000000;
+}
+.policy {
+    color: #000000;    
+}
+.policy>a {
+    color: #283F3B;
+}

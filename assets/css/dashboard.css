@@ -1,0 +1,83 @@
+@import url("common.css");
+
+section.tips-section {
+    position: relative;
+    background: #fff;
+    text-align: center; 
+    padding: 8px;
+    margin: 2 0px auto 50px;
+}
+span.back-arrow{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.tips-section>.section-title {
+    padding: 16px 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #000000;    
+}
+.tips-section>.btn {
+    display: initial;
+    align-items: center;
+    padding: 14px 102px;
+    gap: 10px;
+    width: 95%;
+    height: 54px;
+    margin-bottom: 100px;
+}
+.tips-section>.tips-content{
+    margin: 25% 0;
+}
+
+.info-cards__more {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 8px;
+    cursor: pointer;
+}
+.info-cards__more a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Poligon';
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 2.5vw, 24px);
+    line-height: 150%;
+}
+@media (min-width: 768px) {
+
+    #menu-user-menu > .menu-item {
+        padding: 16px 0;
+    }
+    .hero-dashboar-index {
+    padding: 64px;
+    }    
+    .info-cards {
+        height: 280px;
+        width: 500px;
+    }
+    .info-cards__more {
+      justify-content: center;
+    } 
+    .container.dashboard-information {
+        display: flex;
+        gap: 42px;
+        justify-content: center;
+    }
+    
+    #showStatistics {
+        border-right: 1px solid;
+        padding-right: 8px;
+      }
+
+      .user-panel.container.edit-gift-list {
+        max-width: 40%;
+      }
+}
