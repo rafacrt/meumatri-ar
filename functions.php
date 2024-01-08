@@ -265,37 +265,16 @@ function delete_dica_handler(WP_REST_Request $request) {
     return new WP_REST_Response(true, 200);
 }
 
-add_action('wp_ajax_create_page', 'create_page');
-add_action('wp_ajax_nopriv_create_page', 'create_page');
+function salvar_template() {
+    // Certifique-se de validar e limpar os dados recebidos
+    $nome_casal = sanitize_text_field($_POST['nome_casal']);
+    $data_casal = sanitize_text_field($_POST['data_casal']);
+    $template_escolhido = sanitize_text_field($_POST['template_escolhido']);
 
-function create_page() {
-    global $wpdb;
-    $current_user = wp_get_current_user();
+    // Lógica para criar a nova página com os dados recebidos
+    // ...
 
-    // Recupera os dados do POST
-    $nomeCasal = sanitize_text_field($_POST['nomeCasal']);
-    $date = sanitize_text_field($_POST['date']);
-    $chosenTemplate = sanitize_text_field($_POST['chosenTemplate']);
-
-    // Prepara os dados para a inserção do post
-    $data = array(
-        'post_title'   => $nomeCasal,
-        'post_author'  => $current_user->ID,
-        'post_status'  => 'publish',
-        'post_type'    => 'page',
-        'page_template'  => $chosenTemplate . '.php',
-    );
-
-    // Insere o post no banco de dados
-    $post_id = wp_insert_post($data);
-
-    // Adiciona o nome do casal e a data como metadados personalizados
-    update_post_meta($post_id, 'nome_do_casal', $nomeCasal);
-    update_post_meta($post_id, 'date', $date);
-
-    // Retorna uma resposta
-    echo 'Página criada com sucesso!';
-    wp_die();
+    wp_die(); // Finaliza a execução do AJAX
 }
-
-
+add_action('wp_ajax_salvar_template', 'salvar_template');
+add_action('wp_ajax_nopriv_salvar_template', 'salvar_template');

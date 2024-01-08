@@ -30,7 +30,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <div class="container" id="templatesSectionDois">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" id="layouts-1">
                 <h2 class="titulo_section_mobile_1 d-block d-sm-none mb-5">Layouts <br> modernos e customizáveis</h2>
                 <p class="d-block d-sm-none titulo_section_description_mobile mt-5">Escolha um dos nossos templates, monte sua lista de presentes e edite o conteúdo do site do seu casamento para compartilhar com seus convidados.</p>
                 <h2 class="titulo_section_mobile d-none d-sm-block">Layouts <br> modernos e customizáveis</h2>

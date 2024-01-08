@@ -2,10 +2,10 @@
 /*
 Template Name: Jardim
 */
-
+/*
 if (!is_user_logged_in()) {
   get_template_part('template-parts/create-account-modal', null, 'jardim');
-}
+}*/
 
 // Carrega o style.css exclusivo do template
 wp_enqueue_style('style-jardim', get_template_directory_uri() . '/assets/css/jardim.css');
@@ -82,26 +82,22 @@ $current_user = wp_get_current_user();
         </p>
       </div>
     </div>
-    <button id="button-floating-jardim" class="button-floating-jardim" onclick="escolherTemplate()">Escolher Template</button>
+    <button id="button-floating-jardim" class="button-floating-jardim" onclick="escolherTemplate()">Escolher
+      Template</button>
   </div>
 
   <script>
-    
-    function escolherTemplate() {
-  // Captura dos dados
-  var nomeCasal = document.getElementById('nomecasal').innerText;
-  var date = document.getElementById('datecasal').innerText;
-  var templateId = 'template-jardim'; // ID estático do template
 
-  // Armazenamento no localStorage
-  localStorage.setItem('nomeCasal', nomeCasal);
-  localStorage.setItem('dataCasal', date); // Armazenando a data
-  localStorage.setItem('chosenTemplate', templateId); // Armazenando o ID do template
+    jQuery(document).ready(function ($) {
+      $('#button-floating-jardim').on('click', function () {
+        var nomeCasal = localStorage.getItem('nomeCasal');
+        var dataCasal = localStorage.getItem('dataCasal');
+        var chosenTemplate = localStorage.getItem('chosenTemplate');
 
-  // Redirecionamento para outra página
-  window.location.href = 'https://meumatri.com/cadastro/';
-}
-
+        // Redirecionamento para gravando-template.php com os dados
+        window.location.href = 'https://meumatri.com/gravando-template?nomeCasal=' + nomeCasal + '&dataCasal=' + dataCasal + '&chosenTemplate=' + chosenTemplate;
+      });
+    });
   </script>
 
   <?php get_footer(); ?>

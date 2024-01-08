@@ -11,7 +11,7 @@
                     <b>Floral</b> – seu site de casamento com um visual moderno e prático<br>
                     para compartilhar esse momento especial com seus convidados
                 </p>
-                <a href="/templates" class="btn_section3_templates">Escolher template</a>
+                <a href="#layouts-1" class="btn_section3_templates">Escolher template</a>
             </div>
         </div>
     </div>

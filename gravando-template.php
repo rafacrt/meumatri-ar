@@ -3,65 +3,62 @@
  Template Name: Grava dados
  */
 
-global $wpdb;
-$current_user = wp_get_current_user();
-
-if (isset($_POST['save'])) {
-    $template_choice = $_POST['template_choice']; // O template escolhido deve ser enviado pelo formulário
-    $nome_casal = $_POST['nome_casal']; // O nome do casal também
-    $data_evento = $_POST['data_evento']; // A data do evento
-
-    // Atualiza o meta do usuário com a escolha do template
-    update_user_meta($current_user->ID, 'chosen_template', $template_choice);
-
-    // Cria uma nova página
-    $new_page = array(
-        'post_type'     => 'page',
-        'post_title'    => 'Página do Casal ' . $nome_casal,
-        'post_content'  => 'Conteúdo personalizado aqui', // Adicione o conteúdo do template aqui
-        'post_status'   => 'publish',
-        'post_author'   => $current_user->ID,
-    );
-
-    // Insere a página no banco de dados
-    $post_id = wp_insert_post($new_page);
-
-    // Atualiza meta campos com informações personalizadas
-    update_post_meta($post_id, 'nome_do_casal', $nome_casal);
-    update_post_meta($post_id, 'data_do_evento', $data_evento);
-
-    if ($post_id) {
-        // Redireciona para a nova página ou exibe uma mensagem de sucesso
-        wp_redirect(get_permalink($post_id));
-        exit;
-    } else {
-        echo "Erro ao criar a página.";
-    }
-}
+ global $wpdb;
+ $current_user = wp_get_current_user();
+ 
+ if (isset($_GET['nomeCasal'], $_GET['dataCasal'], $_GET['chosenTemplate'])) {
+     $nome_casal = sanitize_text_field($_GET['nomeCasal']);
+     $data_casal = sanitize_text_field($_GET['dataCasal']);
+     $template_escolhido = sanitize_text_field($_GET['chosenTemplate']);
+ 
+     // Lógica para criar a nova página com os dados recebidos
+     $new_page = array(
+         'post_type'     => 'page',
+         'post_title'    => 'Página do Casal ' . $nome_casal,
+         'post_content'  => 'Aqui vai o conteúdo do template ' . $template_escolhido, // Substitua com o conteúdo real do template
+         'post_status'   => 'publish',
+         'post_author'   => $current_user->ID,
+     );
+ 
+     // Insere a página no banco de dados
+     $post_id = wp_insert_post($new_page);
+ 
+     // Atualiza meta campos com informações personalizadas
+     update_post_meta($post_id, 'nome_do_casal', $nome_casal);
+     update_post_meta($post_id, 'data_do_evento', $data_casal);
+ 
+     if ($post_id) {
+         // Redireciona para a nova página ou exibe uma mensagem de sucesso
+         echo "<script>window.location.href = '" . get_permalink($post_id) . "';</script>";
+         exit;
+     } else {
+         echo "Erro ao criar a página.";
+     }
+ }
 ?>
 
 <script>
-    jQuery(document).ready(function($) {
-    // Recupera os dados do localStorage
-    var nomeCasal = localStorage.getItem('nomeCasal');
-    var dataCasal = localStorage.getItem('dataCasal');
-    var chosenTemplate = localStorage.getItem('chosenTemplate');
+    jQuery(document).ready(function ($) {
+        // Recupera os dados do localStorage
+        var nomeCasal = localStorage.getItem('nomeCasal');
+        var dataCasal = localStorage.getItem('dataCasal');
+        var chosenTemplate = localStorage.getItem('chosenTemplate');
 
-    // Envia os dados para o servidor
-    $.ajax({
-        url: '<?php echo admin_url('admin-ajax.php'); ?>',
-        type: 'POST',
-        data: {
-            action: 'salvar_template',
-            nome_casal: nomeCasal,
-            data_casal: dataCasal,
-            template_escolhido: chosenTemplate
-        },
-        success: function(response) {
-            // Trate a resposta aqui, se necessário
-        }
+        // Envia os dados para o servidor
+        $.ajax({
+            url: '<?php echo admin_url('admin-ajax.php'); ?>',
+            type: 'POST',
+            data: {
+                action: 'salvar_template',
+                nome_casal: nomeCasal,
+                data_casal: dataCasal,
+                template_escolhido: chosenTemplate
+            },
+            success: function (response) {
+                // Trate a resposta aqui, se necessário
+            }
+        });
     });
-});
 </script>
 
 <!-- HTML para o formulário -->
