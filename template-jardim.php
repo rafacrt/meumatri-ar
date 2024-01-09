@@ -94,6 +94,11 @@ $current_user = wp_get_current_user();
         var dataCasal = localStorage.getItem('dataCasal');
         var chosenTemplate = localStorage.getItem('chosenTemplate');
 
+        localStorage.setItem('nomeCasal', 'Nome do Casal');
+        localStorage.setItem('dataCasal', 'Data do Casal');
+        localStorage.setItem('chosenTemplate', 'Template Jardim');
+
+
         // Redirecionamento para gravando-template.php com os dados
         window.location.href = 'https://meumatri.com/gravando-template?nomeCasal=' + nomeCasal + '&dataCasal=' + dataCasal + '&chosenTemplate=' + chosenTemplate;
       });
