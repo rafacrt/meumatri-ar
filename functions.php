@@ -265,16 +265,13 @@ function delete_dica_handler(WP_REST_Request $request) {
     return new WP_REST_Response(true, 200);
 }
 
-function salvar_template() {
-    // Certifique-se de validar e limpar os dados recebidos
-    $nome_casal = sanitize_text_field($_POST['nome_casal']);
-    $data_casal = sanitize_text_field($_POST['data_casal']);
-    $template_escolhido = sanitize_text_field($_POST['template_escolhido']);
+add_action('init', 'check_and_activate_theme');
+function check_and_activate_theme() {
+    $site_id = get_current_blog_id(); // Obtém o ID do sub-site atual
+    $chosen_theme = get_blog_option($site_id, 'chosen_theme'); // Obtém a escolha do tema salva
 
-    // Lógica para criar a nova página com os dados recebidos
-    // ...
-
-    wp_die(); // Finaliza a execução do AJAX
+    if ($chosen_theme && $chosen_theme !== get_current_theme()) {
+        switch_theme($chosen_theme); // Ativa o tema escolhido
+    }
 }
-add_action('wp_ajax_salvar_template', 'salvar_template');
-add_action('wp_ajax_nopriv_salvar_template', 'salvar_template');
+
