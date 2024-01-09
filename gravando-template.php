@@ -11,39 +11,35 @@ if (isset($_GET['nomeCasal'], $_GET['dataCasal'], $_GET['chosenTemplate'])) {
     $data_casal = sanitize_text_field($_GET['dataCasal']);
     $template_escolhido = sanitize_text_field($_GET['chosenTemplate']);
 
-    // Determina o caminho do template escolhido
-    $template_path = get_template_directory() . '/template-parts/template-' . $template_escolhido . '.php';
-    
-    if (file_exists($template_path)) {
-        ob_start();
-        include($template_path);
-        $content = ob_get_clean();
-    } else {
-        $content = 'Template escolhido não encontrado.';
-    }
-
-    // Lógica para criar a nova página com os dados e conteúdo do template
+    // Lógica para criar a nova página com os dados recebidos
     $new_page = array(
         'post_type'     => 'page',
         'post_title'    => 'Página do Casal ' . $nome_casal,
-        'post_content'  => $content,
+        'post_content'  => 'Aqui vai o conteúdo do template ' . $template_escolhido, // Substitua com o conteúdo real do template
         'post_status'   => 'publish',
         'post_author'   => $current_user->ID,
     );
 
-    // Insere a página no banco de dados
     $post_id = wp_insert_post($new_page);
 
-    // Atualiza meta campos com informações personalizadas
-    update_post_meta($post_id, 'nome_do_casal', $nome_casal);
-    update_post_meta($post_id, 'data_do_evento', $data_casal);
-
     if ($post_id) {
-        // Supondo que você tenha o ID do novo sub-site aqui
-        $new_site_id = ...; // Substitua com a lógica para obter o ID do novo sub-site
+        // Cria um novo sub-site (blog) no WordPress Multisite
+        $domain = 'meumatri.com';
+        $path = '/'. sanitize_title($nome_casal) .'/';
+        $title = 'Casamento de ' . $nome_casal;
+        $user_id = $current_user->ID; // Ou o ID de um administrador do site
+
+        $new_site_id = wpmu_create_blog($domain, $path, $title, $user_id);
+
+        if (is_wp_error($new_site_id)) {
+            echo "Erro ao criar o sub-site: " . $new_site_id->get_error_message();
+            exit;
+        }
 
         // Salva a escolha do template nos metadados do novo sub-site
-        update_blog_option($new_site_id, 'chosen_theme', $template_escolhido);
+        switch_to_blog($new_site_id);
+        update_option('chosen_theme', $template_escolhido);
+        restore_current_blog();
 
         // Redireciona para a nova página ou exibe uma mensagem de sucesso
         echo "<script>window.location.href = '" . get_permalink($post_id) . "';</script>";
