@@ -265,13 +265,3 @@ function delete_dica_handler(WP_REST_Request $request) {
     return new WP_REST_Response(true, 200);
 }
 
-add_action('init', 'check_and_activate_theme');
-function check_and_activate_theme() {
-    $site_id = get_current_blog_id(); // Obtém o ID do sub-site atual
-    $chosen_theme = get_blog_option($site_id, 'chosen_theme'); // Obtém a escolha do tema salva
-
-    if ($chosen_theme && $chosen_theme !== get_current_theme()) {
-        switch_theme($chosen_theme); // Ativa o tema escolhido
-    }
-}
-

@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Cadastro*/
+/* Template Name: Cadastro */
 
 if (is_user_logged_in()) {
     wp_redirect(site_url() . '/painel');
@@ -9,9 +9,16 @@ if (is_user_logged_in()) {
 $google = get_template_directory_uri() . '/assets/images/common/login-with-google.png';
 $facebook = get_template_directory_uri() . '/assets/images/common/login-with-facebook.png';
 $apple = get_template_directory_uri() . '/assets/images/common/login-with-apple.png';
-//get_template_part('wp-content/plugins/ultimate-member/templates/register.php');
+
+// Recebe os dados da página anterior
+$nome_do_casal = $_POST['nome_do_casal'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+
 get_header();
+
 ?>
+
 <style>
     /* LOGIN STYLES */
     .home.login {
@@ -158,6 +165,7 @@ get_header();
     <p class="login-text-small"><small>Já tem conta? <a href="/login">Entrar</a></small></p>
 
 </section>
+
 <script>
     document.getElementById('facebook-login-button').addEventListener('click', function () {
         var facebookAppId = '280703424706156'; // Substitua pelo seu App ID.
@@ -167,74 +175,53 @@ get_header();
     });
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 <script>
-    jQuery(document).ready(function () {
-        // Verifica se o valor está armazenado no localStorage e o insere no campo
-        var nomeCasal = localStorage.getItem('nomeCasal');
-        if (nomeCasal) {
-            jQuery('#couple_name').val(nomeCasal);
-        }
-        jQuery(document).ready(function () {
-            function mapLocaStorageInfoSite() {
-                var localStorageData = {};
-                for (var i = 0; i < localStorage.length; i++) {
-                    var key = localStorage.key(i);
-                    var value = localStorage.getItem(key);
-                    localStorageData[key] = value;
+    jQuery('#registration-form').on('submit', function (e) {
+        e.preventDefault();
+
+        var cpf = jQuery('#cpf').val();
+        var userLogin = jQuery('#user_login').val();
+        var userPass = jQuery('#user_pass').val();
+        var userPassConfirm = jQuery('#user_pass_confirm').val();
+        var locaStorageInfoSite = mapLocaStorageInfoSite();
+        var templateBlog = localStorage.getItem('current_template');
+
+        jQuery('.error-message').text('');
+
+        jQuery.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            data: {
+                action: 'validar_usuario',
+                cpf: cpf,
+                userLogin: userLogin,
+                userPass: userPass,
+                userPassConfirm: userPassConfirm,
+                locaStorageInfoSite: locaStorageInfoSite,
+                templateBlog: templateBlog
+            },
+            beforeSend: function () {
+                jQuery(".loading-overlay").show();
+                jQuery(".btn").val("Enviando ...");
+            },
+            success: function (response) {
+                var data = JSON.parse(response);
+                if (data.status === 'email_exists') {
+                    jQuery('#email-error').text(data.message);
+                    jQuery(".loading-overlay").hide();
+                } else if (data.status === 'password_mismatch') {
+                    jQuery('#password-error').text(data.message);
+                    jQuery(".loading-overlay").hide();
+                } else if (data.status === 'success') {
+                    window.location.href = 'https://meumatri.com/painel';
+                } else {
+                    jQuery('#password-error').text(data.message);
+                    jQuery(".loading-overlay").hide();
                 }
-                return localStorageData;
+                jQuery(".btn").val("Continuar");
             }
-
-            console.log(mapLocaStorageInfoSite())
-
-            jQuery('#registration-form').on('submit', function (e) {
-                e.preventDefault();
-
-                var coupleName = jQuery('#couple_name').val();
-                var cpf = jQuery('#cpf').val();
-                var userLogin = jQuery('#user_login').val();
-                var userPass = jQuery('#user_pass').val();
-                var userPassConfirm = jQuery('#user_pass_confirm').val();
-                var locaStorageInfoSite = mapLocaStorageInfoSite();
-                var templateBlog = localStorage.getItem('current_template');
-
-                jQuery('.error-message').text('');
-
-                jQuery.ajax({
-                    type: 'POST',
-                    url: '/wp-admin/admin-ajax.php',
-                    data: {
-                        action: 'validar_usuario',
-                        coupleName: coupleName,
-                        cpf: cpf,
-                        userLogin: userLogin,
-                        userPass: userPass,
-                        userPassConfirm: userPassConfirm,
-                        locaStorageInfoSite: locaStorageInfoSite,
-                        templateBlog: templateBlog
-                    },
-                    beforeSend: function () {
-                        jQuery(".loading-overlay").show();
-                        jQuery(".btn").val("Enviando ...");
-                    },
-                    success: function (response) {
-                        var data = JSON.parse(response);
-                        if (data.status === 'email_exists') {
-                            jQuery('#email-error').text(data.message);
-                            jQuery(".loading-overlay").hide();
-                        } else if (data.status === 'password_mismatch') {
-                            jQuery('#password-error').text(data.message);
-                            jQuery(".loading-overlay").hide();
-                        } else if (data.status === 'success') {
-                            window.location.href = 'https://meumatri.com/painel';
-                        } else {
-                            jQuery('#password-error').text(data.message);
-                            jQuery(".loading-overlay").hide();
-                        }
-                        jQuery(".btn").val("Continuar");
-                    }
-                });
-            });
         });
     });
+
 </script>

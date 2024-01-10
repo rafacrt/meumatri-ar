@@ -10,14 +10,9 @@ Template Name: Jardim
 // Carrega o style.css exclusivo do template
 wp_enqueue_style('style-jardim', get_template_directory_uri() . '/assets/css/jardim.css');
 
-
-global $wpdb;
-$current_user = wp_get_current_user();
-
-// Recupera os dados do usuário
-$title = get_user_meta($current_user->ID, 'nome_do_casal', true) ?: 'Insira aqui o nome do casal';
-$date = get_user_meta($current_user->ID, 'data_do_evento', true) ?: 'Data';
-
+$title = 'Monica & Edu';
+$date = '08/02/2024';
+$template = 'jardim';
 
 if (wp_is_mobile()) {
   $background = get_template_directory_uri() . '/assets/images/templates-assets/jardimBgMobile.png';
@@ -85,35 +80,27 @@ $current_user = wp_get_current_user();
         </p>
       </div>
     </div>
-    <button id="button-floating-jardim" class="button-floating-jardim" onclick="escolherTemplate()">Escolher
-      Template</button>
+    <button id="button-floating-jardim" class="button-floating-jardim">Escolher Template</button>
   </div>
 
   <script>
-    function escolherTemplate() {
+    document.getElementById('button-floating-jardim').addEventListener('click', function() {
       var nomeCasal = document.getElementById('nomecasal').innerText;
-      var date = document.getElementById('datecasal').innerText;
+      var dateCasal = document.getElementById('datecasal').innerText;
+      var templateName = 'Jardim';
 
-      // Envia os dados para o servidor via AJAX
-      jQuery.ajax({
-        url: '<?php echo admin_url('admin-ajax.php'); ?>',
-        type: 'POST',
-        data: {
-          'action': 'salvar_template',
-          'nome_casal': nomeCasal,
-          'data_casal': date,
-          'template_escolhido': 'template-jardim'
+      fetch('<?= get_template_directory_uri(); ?>/template-cadastro.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        success: function (response) {
-          if (response.success) {
-            window.location.href = response.redirect_url; // Redireciona para a nova página
-          } else {
-            alert("Erro ao criar a página: " + response.error);
-          }
-        }
-      });
-    }
+        body: JSON.stringify({ nomeCasal, dateCasal, templateName }),
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch((error) => console.error('Error:', error));
+    });
   </script>
 
-
   <?php get_footer(); ?>
+</body>
